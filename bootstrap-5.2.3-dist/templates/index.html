@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="SkyGazer is a web application that provides prediction about aircraft cancelation">
+    <title>SkyGazer</title>
+    <style>
+@font-face {
+    font-family: 'EF_watermelonSalad';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+        body {
+            font-family: 'EF_watermelonSalad';
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .jumbotron {
+            
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            font-family: 'EF_watermelonSalad', sans-serif;
+            background-image: url("/images/9442.jpg");
+            background-size: cover;
+           
+        }
+        
+        h1 {
+            margin-top: 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            font-family: 'EF_watermelonSalad', sans-serif;
+            text-align: center;
+        }
+        
+        button {
+            background-color: #6CC0FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'EF_watermelonSalad', sans-serif;
+        }
+        
+        button:hover {
+            background-color: #3c8ad9;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            // Get the current date and time
+            const currentDate = new Date();
+            
+            // Format the date and time as a string in the required format
+            const currentDateString = currentDate.toISOString().slice(0, 16);
+            
+            // Set the value of the input field to the current date and time
+            document.getElementById('time').value = currentDateString;
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Sky Gazer</h1><br><br>
+            <p>스카이게이저는 결항 예측을 수행하여<br><br>최적의 티켓을 제시해줍니다<br><br>
+             
+        </div>
+        <form action="/" method="POST">
+            <label for="time">출발 시간을 입력해주세요</label>
+            <br>
+            <input type="datetime-local" id="time" name="time">
+            <br>
+            <br>
+            <button type="submit">확인</button>
+        </form>
+    </div>
+</body>
+
+</html>
